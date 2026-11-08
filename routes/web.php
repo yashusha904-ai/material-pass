@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MaterialPassController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/material-passes/create', [MaterialPassController::class, 'create'])
+        ->name('material-passes.create');
+    Route::get('/material-passes/{materialPass}', [MaterialPassController::class, 'show'])
+        ->name('material-passes.show');
 });
 
 require __DIR__.'/auth.php';
