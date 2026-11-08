@@ -45,6 +45,19 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Материальный пропуск
                                 </NavLink>
+                                <NavLink
+                                    :href="route('directories.index')"
+                                    :active="
+                                        route().current('directories.*') ||
+                                        route().current('people.*') ||
+                                        route().current('employees.*') ||
+                                        route().current('staff-positions.*') ||
+                                        route().current('departments.*') ||
+                                        route().current('external-organizations.*')
+                                    "
+                                >
+                                    Справочники
+                                </NavLink>
                             </div>
                         </div>
 
@@ -157,6 +170,19 @@ const showingNavigationDropdown = ref(false);
                             :active="route().current('material-passes.*')"
                         >
                             Материальный пропуск
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('directories.index')"
+                            :active="
+                                route().current('directories.*') ||
+                                route().current('people.*') ||
+                                route().current('employees.*') ||
+                                route().current('staff-positions.*') ||
+                                route().current('departments.*') ||
+                                route().current('external-organizations.*')
+                            "
+                        >
+                            Справочники
                         </ResponsiveNavLink>
                     </div>
 
