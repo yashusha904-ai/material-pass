@@ -6,7 +6,11 @@
 .phpactor.json
 .phpunit.result.cache
 /.codex
-/.cursor/
+# Ignore local Cursor IDE state; keep Cloud Agent Config-as-code files.
+/.cursor/*
+!/.cursor/environment.json
+!/.cursor/cloud-install.sh
+!/.cursor/cloud-start.sh
 /.idea
 /.nova
 /.phpunit.cache
@@ -25,3 +29,6 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Local Cloud Agent / machine overrides
+docker-compose.override.yml
