@@ -39,6 +39,12 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Dashboard
                                 </NavLink>
+                                <NavLink
+                                    :href="route('material-passes.create')"
+                                    :active="route().current('material-passes.*')"
+                                >
+                                    Материальный пропуск
+                                </NavLink>
                             </div>
                         </div>
 
@@ -145,6 +151,12 @@ const showingNavigationDropdown = ref(false);
                             :active="route().current('dashboard')"
                         >
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('material-passes.create')"
+                            :active="route().current('material-passes.*')"
+                        >
+                            Материальный пропуск
                         </ResponsiveNavLink>
                     </div>
 
